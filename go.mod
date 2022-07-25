@@ -58,4 +58,4 @@ require (
 	k8s.io/klog/v2 v2.40.1 // indirect
 )
 
-replace go.opentelemetry.io/otel v1.8.0 => github.com/pmars/opentelemetry-go v1.8.6
+replace go.opentelemetry.io/otel v1.8.0 => github.com/pmars/opentelemetry-go v1.8.7
