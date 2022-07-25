@@ -57,3 +57,9 @@ require (
 	google.golang.org/genproto v0.0.0-20220602131408-e326c6e8e9c8
 	k8s.io/klog/v2 v2.40.1 // indirect
 )
+
+
+
+replace (
+	go.opentelemetry.io/otel/trace => github.com/pmars/opentelemetry-go/trace latest
+)
