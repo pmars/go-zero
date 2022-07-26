@@ -58,4 +58,8 @@ require (
 	k8s.io/klog/v2 v2.40.1 // indirect
 )
 
-replace go.opentelemetry.io/otel v1.8.0 => github.com/pmars/opentelemetry-go v1.8.7
+replace go.opentelemetry.io/otel v1.8.0 => github.com/pmars/opentelemetry-go v1.8.8
+replace 	go.opentelemetry.io/otel/exporters/jaeger v1.8.0 => github.com/pmars/opentelemetry-go/exporters/jaeger v1.8.8
+replace 	go.opentelemetry.io/otel/exporters/zipkin v1.8.0 => github.com/pmars/opentelemetry-go/exporters/zipkin v1.8.8
+replace 	go.opentelemetry.io/otel/sdk v1.8.0 => github.com/pmars/opentelemetry-go/sdk v1.8.8
+replace 	go.opentelemetry.io/otel/trace v1.8.0 => github.com/pmars/opentelemetry-go/trace v1.8.8
