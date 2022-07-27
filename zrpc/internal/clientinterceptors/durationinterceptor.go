@@ -2,6 +2,7 @@ package clientinterceptors
 
 import (
 	"context"
+	"encoding/json"
 	"path"
 	"time"
 
@@ -27,8 +28,12 @@ func DurationInterceptor(ctx context.Context, method string, req, reply interfac
 	} else {
 		elapsed := timex.Since(start)
 		if elapsed > slowThreshold.Load() {
+			bytes, _ := json.Marshal(reply)
+			if len(bytes) > 1024 {
+				bytes = bytes[:1024]
+			}
 			logx.WithContext(ctx).WithDuration(elapsed).Slowf("[RPC] ok - slowcall - %s - %v - %v",
-				serverName, req, reply)
+				serverName, req, string(bytes))
 		}
 	}
 
