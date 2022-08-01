@@ -1,6 +1,7 @@
 package internal
 
 import (
+	"encoding/json"
 	"net"
 
 	"github.com/zeromicro/go-zero/core/proc"
@@ -49,6 +50,7 @@ func (s *rpcServer) SetName(name string) {
 }
 
 func (s *rpcServer) Start(register RegisterFn) error {
+	bytes, _ := json.Marshal(register)
 	lis, err := net.Listen("tcp", s.address)
 	if err != nil {
 		return err

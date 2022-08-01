@@ -58,12 +58,17 @@ require (
 	k8s.io/klog/v2 v2.40.1 // indirect
 )
 
-replace go.opentelemetry.io/otel => github.com/pmars/opentelemetry-go v1.9.0
+replace (
+	// go.opentelemetry.io/otel => github.com/pmars/opentelemetry-go v1.9.0
+	// go.opentelemetry.io/otel/exporters/jaeger => github.com/pmars/opentelemetry-go/exporters/jaeger v1.9.0
+	// go.opentelemetry.io/otel/exporters/zipkin => github.com/pmars/opentelemetry-go/exporters/zipkin v1.9.0
+	// go.opentelemetry.io/otel/sdk => github.com/pmars/opentelemetry-go/sdk v1.9.0
+	// go.opentelemetry.io/otel/trace => github.com/pmars/opentelemetry-go/trace v1.9.0
 
-replace go.opentelemetry.io/otel/exporters/jaeger => github.com/pmars/opentelemetry-go/exporters/jaeger v1.9.0
 
-replace go.opentelemetry.io/otel/exporters/zipkin => github.com/pmars/opentelemetry-go/exporters/zipkin v1.9.0
-
-replace go.opentelemetry.io/otel/sdk => github.com/pmars/opentelemetry-go/sdk v1.9.0
-
-replace go.opentelemetry.io/otel/trace => github.com/pmars/opentelemetry-go/trace v1.9.0
+	go.opentelemetry.io/otel => ../opentelemetry-go
+	go.opentelemetry.io/otel/exporters/jaeger => ../opentelemetry-go/exporters/jaeger
+	go.opentelemetry.io/otel/exporters/zipkin => ../opentelemetry-go/exporters/zipkin
+	go.opentelemetry.io/otel/sdk => ../opentelemetry-go/sdk
+	go.opentelemetry.io/otel/trace => ../opentelemetry-go/trace
+)
